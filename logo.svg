@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+<rect width="512" height="512" rx="112" fill="#0b0e0c"/>
+<rect x="74" y="150" width="364" height="212" rx="20" fill="none" stroke="#39d98a" stroke-width="16"/>
+<path d="M110 196h120M110 232h180" stroke="#2f8a5c" stroke-width="14" stroke-linecap="round"/>
+<rect x="286" y="286" width="130" height="52" rx="10" fill="#39d98a"/>
+<text x="351" y="322" font-family="DejaVu Sans, sans-serif" font-size="30" font-weight="bold" text-anchor="middle" fill="#0b0e0c">PAID</text>
+</svg>
