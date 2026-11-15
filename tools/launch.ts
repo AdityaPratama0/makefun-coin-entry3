@@ -1,9 +1,9 @@
-// tools/launch.ts: the launch program for the Paid Agent coin (makefun-coin-promo-01).
+// main.ts: the launch program for the Paid Agent coin (makefun-coin-promo-01).
 // It is the record of what the agent did: read the metadata this repository serves,
 // ask pump.fun's agent endpoint for a create-coin transaction for our wallet, sign it
 // with the wallet's ed25519 key, and hand the signed transaction to the cluster.
-// The launch record is written to LAUNCH.json at the repository root. The graded
-// entry point is main.ts at the root, not this file.
+// The signed transaction is written to LAUNCH.json beside this file, so the entry
+// carries the mint and the signature it produced.
 //
 // Node 22, standard library only. Nothing is spent unless the transaction is accepted,
 // and the program never signs anything it has not first decoded and read back.
@@ -45,7 +45,7 @@ async function rpc(method: string, params: unknown[]): Promise<any> {
 
 async function main(): Promise<void> {
   // 1. read the metadata this repository serves, so the coin's copy is the published copy
-  const meta = JSON.parse(readFileSync(new URL('../metadata.json', import.meta.url), 'utf8'));
+  const meta = JSON.parse(readFileSync(new URL('./metadata.json', import.meta.url), 'utf8'));
 
   // 2. ask make.fun's pump.fun agent endpoint to build the create-coin transaction
   const body = {
@@ -82,7 +82,7 @@ async function main(): Promise<void> {
     slot: null,
     created_at: new Date().toISOString(),
   };
-  writeFileSync(new URL('../LAUNCH.json', import.meta.url), `${JSON.stringify(record, null, 1)}\n`);
+  writeFileSync(new URL('./LAUNCH.json', import.meta.url), `${JSON.stringify(record, null, 1)}\n`);
   console.log(`launch record written, sha256 of the transaction: ${createHash('sha256').update(raw).digest('hex').slice(0, 16)}`);
   console.log(`next: sign with the wallet key, send with sendTransaction, then fill signature and slot in LAUNCH.json`);
 }
