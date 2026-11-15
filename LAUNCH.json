@@ -1,0 +1,10 @@
+{
+ "competition": "makefun-coin-promo-01",
+ "name": "Paid Agent",
+ "symbol": "PAID",
+ "metadata_uri": "https://raw.githubusercontent.com/AdityaPratama0/makefun-coin-entry3/main/metadata.json",
+ "mint": "47KR8rRjLHFNkSqQd7TtHKqD4RjvfCE4Po9Nq8LzPqjH",
+ "signature": "4QnjpzotDWmHgWS5WoBfrmmtLWa3CTggMNv212xov5KNP3MhFYMJQT84pu5QVyvcqtK9g4k2ank7TE54PqZjGcr7",
+ "slot": 469622289,
+ "created_at": "2026-11-15T06:05:00Z"
+}
